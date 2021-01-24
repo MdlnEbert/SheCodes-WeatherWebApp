@@ -70,6 +70,3 @@ locationBtn.addEventListener("click", showLocationTemp);
 document.querySelector("#show-celsius").addEventListener("click", convertCelsius);
 document.querySelector("#show-fahrenheit").addEventListener("click", convertFahrenheit);
 
-//Weather API
-
-  //`https://api.openweathermap.org/data/2.5/find?q=${searchedCity}&units=metric&appid=${apiKey}`;

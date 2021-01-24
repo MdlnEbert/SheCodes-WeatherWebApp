@@ -62,3 +62,8 @@ h1{
 .colTemp{
   margin-bottom: 10px;
 }
+
+.bg-light{
+  font-size: small;
+  padding: 10px 0px;
+}
