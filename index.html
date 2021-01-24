@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <!-- Own CSS Styling -->
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/4c849cd0fa.js" crossorigin="anonymous"></script>
+
+  <!-- Axios Integration -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <title>SheCodes Homework Plus Week 5</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h1>
+        Weather
+      </h1>
+      <h2>
+        Find the weather forecast for any city in the world
+      </h2>
+    </header>
+    <div class="row searchArea">
+      <form class="row searchArea" id="search-input">
+        <div class="col-sm-3">
+          <input type="search" class="form-control" placeholder="Type City" autocomplete="off" id="searched-city">
+        </div>
+        <div class="col-sm-2">
+          <input type="submit" class="form-control search-btn">
+        </div>
+        <div class="col-sm-1">
+          <button class="form-control search-btn" id="lctn-btn">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
+        </div>
+      </form>
+
+    </div>
+
+    <div class="weather-box">
+      <div class="row todayWeather">
+        <div class="col-sm">
+          <span class="citySearched" id="city-name">
+            City name
+          </span>
+          <span class="DateTime" id="Date-Time-now">dd/mm/yyyy, hh:mm</span>
+        </div>
+        <div class="col-sm-1">
+          <i class="far fa-snowflake"></i>
+        </div>
+        <div class="col-sm">
+          <span class="temperature" id="temp-today">
+            30
+          </span>
+          <span>
+            <a href="#" id="show-celsius"> °C </a> / <a href="#" id="show-fahrenheit">°F</a>
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm colTemp">
+          <div class="card">
+            <div class="card-header">
+              Today + 1
+            </div>
+            <div class="card-body">
+              <i class="far fa-snowflake card-img-top"></i>
+              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <p class="card-text">Low / High</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm colTemp">
+          <div class="card">
+            <div class="card-header">
+              Today + 2
+            </div>
+            <div class="card-body">
+              <i class="far fa-snowflake card-img-top"></i>
+              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <p class="card-text">Low / High</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm colTemp">
+          <div class="card">
+            <div class="card-header">
+              Today + 3
+            </div>
+            <div class="card-body">
+              <i class="far fa-snowflake card-img-top"></i>
+              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <p class="card-text">Low / High</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm colTemp">
+          <div class="card">
+            <div class="card-header">
+              Today + 4
+            </div>
+            <div class="card-body">
+              <i class="far fa-snowflake card-img-top"></i>
+              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <p class="card-text">Low / High</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm colTemp">
+          <div class="card">
+            <div class="card-header">
+              Today + 5
+            </div>
+            <div class="card-body">
+              <i class="far fa-snowflake card-img-top"></i>
+              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <p class="card-text">Low / High</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Own Java Script -->
+  <script src="src/script.js"></script>
+
+</body>
+
+</html>

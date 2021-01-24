@@ -1,0 +1,64 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+  margin: 32px 0px ;
+}
+
+h1{
+  font-weight: bold;
+}
+
+.searchArea{
+  margin: 0px 0px 32px 0px;
+}
+.search-btn{
+  background: #F7F7F7;
+  color: #000000;
+}
+
+.weather-box{
+  border: #F7F7F7 1px solid;
+  padding: 20px;
+}
+
+.todayWeather{
+  margin-bottom: 15px;
+}
+
+.citySearched{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.DateTime, .card-text{
+  font-size: 10px;
+  color: #939AA9;
+}
+
+.fa-snowflake{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.temperature{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-img-top{
+  padding: 0px 0px 15px 0px;
+}
+
+.card-title{
+  margin: 0;
+}
+
+.card-header{
+  font-weight: bold;
+}
+
+.colTemp{
+  margin-bottom: 10px;
+}
