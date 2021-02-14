@@ -11,9 +11,9 @@
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
   <!-- Own CSS Styling -->
-  <link rel="stylesheet" href="src/styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
 
   <!-- Font Awesome for Icons -->
   <script src="https://kit.fontawesome.com/4c849cd0fa.js" crossorigin="anonymous"></script>
@@ -60,16 +60,18 @@
           </span>
           <span class="DateTime" id="Date-Time-now">dd/mm/yyyy, hh:mm</span>
         </div>
-        <div class="col-sm-1">
-          <i class="far fa-snowflake"></i>
-        </div>
-        <div class="col-sm">
-          <span class="temperature" id="temp-today">
-            30
-          </span>
-          <span>
-            <a href="#" id="show-celsius" class="active"> °C </a> / <a href="#" id="show-fahrenheit">°F</a>
-          </span>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="clearfix weather-temp">
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="clear" id="image" class="float-left" />
+            <div class="float-left">
+              <strong class="temperature"  id="temp-today">30</strong
+                ><span>
+                <a href="#" id="show-celsius" class="active"> °C </a> / <a href="#" id="show-fahrenheit">°F</a>
+              </span>
+             </div>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -80,7 +82,7 @@
             </div>
             <div class="card-body">
               <i class="far fa-snowflake card-img-top"></i>
-              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <h5 class="card-title temperature-card">-4°C / 3°C</h5>
               <p class="card-text">Low / High</p>
             </div>
           </div>
@@ -92,7 +94,7 @@
             </div>
             <div class="card-body">
               <i class="far fa-snowflake card-img-top"></i>
-              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <h5 class="card-title temperature-card">-4°C / 3°C</h5>
               <p class="card-text">Low / High</p>
             </div>
           </div>
@@ -104,7 +106,7 @@
             </div>
             <div class="card-body">
               <i class="far fa-snowflake card-img-top"></i>
-              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <h5 class="card-title temperature-card">-4°C / 3°C</h5>
               <p class="card-text">Low / High</p>
             </div>
           </div>
@@ -116,7 +118,7 @@
             </div>
             <div class="card-body">
               <i class="far fa-snowflake card-img-top"></i>
-              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <h5 class="card-title temperature-card">-4°C / 3°C</h5>
               <p class="card-text">Low / High</p>
             </div>
           </div>
@@ -128,7 +130,7 @@
             </div>
             <div class="card-body">
               <i class="far fa-snowflake card-img-top"></i>
-              <h5 class="card-title temperature">-4°C / 3°C</h5>
+              <h5 class="card-title temperature-card">-4°C / 3°C</h5>
               <p class="card-text">Low / High</p>
             </div>
           </div>

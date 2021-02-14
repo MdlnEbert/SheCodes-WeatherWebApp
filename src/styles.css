@@ -10,6 +10,10 @@ h1{
   font-weight: bold;
 }
 
+li{
+  list-style: none;
+}
+
 .searchArea{
   margin: 0px 0px 32px 0px;
 }
@@ -42,11 +46,27 @@ h1{
   font-weight: bold;
 }
 
+.weather-temp{
+  display: flex;
+  position: relative;
+}
+
+.weather-temp img{
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+
 .temperature{
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.temperature-card{
   font-size: 18px;
   font-weight: bold;
 }
-
 .card-img-top{
   padding: 0px 0px 15px 0px;
 }
