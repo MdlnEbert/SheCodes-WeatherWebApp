@@ -16,6 +16,7 @@ function showLocationTemp(event) {
 }
 
 function getTempCity(response) {
+  document.getElementById("weather-box").hidden = false;
   tempSearched = Math.round(response.data.main.temp);
    document.querySelector("#temp-today").innerHTML = tempSearched;
    searchedCityOutput.innerHTML = response.data.name;
@@ -68,6 +69,7 @@ let minutes = now.getMinutes();
 let day = now.getDay();
 
 let tempSearched = null;
+document.getElementById("weather-box").hidden = true;
 
 // Any other calls
 dateTimeOutput.innerHTML = `${weekdays[day]}, ${hour}:${minutes}`;
