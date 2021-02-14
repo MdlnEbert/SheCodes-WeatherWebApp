@@ -61,6 +61,12 @@ li::first-letter{
   width: 64px;
 }
 
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -22px;
+}
+
 .temperature{
   font-size: 48px;
   line-height: 1;

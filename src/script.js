@@ -79,7 +79,7 @@ let minutes = now.getMinutes();
 let day = now.getDay();
 
 let tempSearched = null;
-document.getElementById("weather-box").hidden = true;
+//document.getElementById("weather-box").hidden = true;
 
 // Any other calls
 dateTimeOutput.innerHTML = `${weekdays[day]}, ${hour}:${minutes}`;
