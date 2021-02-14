@@ -17,18 +17,23 @@ function showLocationTemp(event) {
 
 function getTempCity(response) {
   let imageElement = document.querySelector("#image");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
     
   document.getElementById("weather-box").hidden = false;
   tempSearched = Math.round(response.data.main.temp);
    document.querySelector("#temp-today").innerHTML = tempSearched;
    searchedCityOutput.innerHTML = response.data.name;
+   console.log(response.data);
+   humidityElement.innerHTML = response.data.main.humidity;
+   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
 
    imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
 
 function searchCity(event) {
   event.preventDefault();
-  //alert(`You entered the function with ${searchedCity.value}`);
+  
   if (searchedCity.value) {
     let searchedCityValue = searchedCity.value;
     let apiKey = "f15d01756f0fb22443c2b9ece3cb7eea";
