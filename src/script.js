@@ -19,14 +19,15 @@ function getTempCity(response) {
   let imageElement = document.querySelector("#image");
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
+  let weatherDescrElement = document.querySelector("#weather-description");
     
   document.getElementById("weather-box").hidden = false;
   tempSearched = Math.round(response.data.main.temp);
    document.querySelector("#temp-today").innerHTML = tempSearched;
    searchedCityOutput.innerHTML = response.data.name;
-   console.log(response.data);
    humidityElement.innerHTML = response.data.main.humidity;
    windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+   weatherDescrElement.innerHTML = response.data.weather[0].description;
 
    imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 }
@@ -78,7 +79,7 @@ let minutes = now.getMinutes();
 let day = now.getDay();
 
 let tempSearched = null;
-//document.getElementById("weather-box").hidden = true;
+document.getElementById("weather-box").hidden = true;
 
 // Any other calls
 dateTimeOutput.innerHTML = `${weekdays[day]}, ${hour}:${minutes}`;
