@@ -16,8 +16,8 @@ function showLocationTemp(event) {
 }
 
 function getTempCity(response) {
-  let tempCity = Math.round(response.data.main.temp);
-   document.querySelector("#temp-today").innerHTML = tempCity;
+  tempSearched = Math.round(response.data.main.temp);
+   document.querySelector("#temp-today").innerHTML = tempSearched;
    searchedCityOutput.innerHTML = response.data.name;
 }
 
@@ -40,14 +40,18 @@ function searchCity(event) {
 
 function convertCelsius(event) {
   event.preventDefault();
-  let tempFahrenheit = document.querySelector("#temp-today").innerHTML;
-  document.querySelector("#temp-today").innerHTML = (tempFahrenheit - 32) * 5/9;
+ 
+  document.querySelector("#show-celsius").classList.add("active");
+  document.querySelector("#show-fahrenheit").classList.remove("active");
+  document.querySelector("#temp-today").innerHTML = tempSearched;
 }
 
 function convertFahrenheit(event) {
   event.preventDefault();
-  let tempCelsius = document.querySelector("#temp-today").innerHTML;
-  document.querySelector("#temp-today").innerHTML = (tempCelsius * 9/5) + 32;
+ 
+  document.querySelector("#show-celsius").classList.remove("active");
+  document.querySelector("#show-fahrenheit").classList.add("active");
+  document.querySelector("#temp-today").innerHTML = Math.round((tempSearched * 9/5) + 32);
 }
 
 //Define variables and arrays
@@ -62,6 +66,8 @@ let now = new Date();
 let hour = now.getHours();
 let minutes = now.getMinutes();
 let day = now.getDay();
+
+let tempSearched = null;
 
 // Any other calls
 dateTimeOutput.innerHTML = `${weekdays[day]}, ${hour}:${minutes}`;

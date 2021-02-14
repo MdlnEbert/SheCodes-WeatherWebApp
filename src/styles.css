@@ -67,3 +67,12 @@ h1{
   font-size: small;
   padding: 10px 0px;
 }
+
+.active{
+  color: #000000;
+  text-decoration: none;
+}
+
+.active:hover{
+  cursor:default;
+}
