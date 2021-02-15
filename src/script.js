@@ -2,7 +2,7 @@
 function saveLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiOneWeatherCall2 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`;
+  let apiOneWeatherCall2 = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=1&appid=${apiKey}`;
 
   //Call Weather API
   axios.get(apiOneWeatherCall2).then(getLongLat);
