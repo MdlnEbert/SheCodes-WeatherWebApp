@@ -36,6 +36,10 @@ function getTempCity(response) {
   //show weather box after search variable was entered
   document.getElementById("weather-box").hidden = false;
 
+  //switch back to Celsius if searched city before
+  document.querySelector("#show-celsius").classList.add("active");
+  document.querySelector("#show-fahrenheit").classList.remove("active");
+
   // Update current weather section
   tempSearched = Math.round(response.data.current.temp);
   tempTodayElement.innerHTML = tempSearched;
