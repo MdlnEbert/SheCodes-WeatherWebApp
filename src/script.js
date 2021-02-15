@@ -40,11 +40,12 @@ function getTempCity(response) {
   document.getElementById("weather-box").hidden = false;
 
   // Update current weather section
-  tempTodayElement.innerHTML = Math.round(response.data.current.temp);
-   humidityElement.innerHTML = response.data.current.humidity;
-   windSpeedElement.innerHTML = Math.round(response.data.current.wind_speed);
-   weatherDescrElement.innerHTML = response.data.current.weather[0].description;
-   imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`)
+  tempSearched = Math.round(response.data.current.temp);
+  tempTodayElement.innerHTML = tempSearched;
+  humidityElement.innerHTML = response.data.current.humidity;
+  windSpeedElement.innerHTML = Math.round(response.data.current.wind_speed);
+  weatherDescrElement.innerHTML = response.data.current.weather[0].description;
+  imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`)
 
    // Update Forecast section
    let index = 0;
@@ -84,7 +85,7 @@ function convertCelsius(event) {
 
 function convertFahrenheit(event) {
   event.preventDefault();
- 
+  
   document.querySelector("#show-celsius").classList.remove("active");
   document.querySelector("#show-fahrenheit").classList.add("active");
   document.querySelector("#temp-today").innerHTML = Math.round((tempSearched * 9/5) + 32);
