@@ -46,13 +46,13 @@ function getTempCity(response) {
   humidityElement.innerHTML = response.data.current.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.current.wind_speed);
   weatherDescrElement.innerHTML = response.data.current.weather[0].description;
-  imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`, "alt", `${response.data.current.weather[0].description}`)
+  imageElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`, "alt", `${response.data.current.weather[0].description}`)
 
    // Update Forecast section
    let index = 0;
    for( index; index < forecastDays.length; index++ ) {
      forecastDays[index].innerHTML = weekdays[day+1+index];
-     cardImages[index].setAttribute("src", `http://openweathermap.org/img/wn/${response.data.daily[index].weather[0].icon}@2x.png`, "alt", `${response.data.daily[index].weather[0].description}`);
+     cardImages[index].setAttribute("src", `https://openweathermap.org/img/wn/${response.data.daily[index].weather[0].icon}@2x.png`, "alt", `${response.data.daily[index].weather[0].description}`);
     minTemps[index].innerHTML = Math.round(response.data.daily[index].temp.min);
     maxTemps[index].innerHTML = Math.round(response.data.daily[index].temp.max);
 
@@ -69,9 +69,9 @@ function searchCity(event) {
   
   if (searchedCity.value) {
     let searchedCityValue = searchedCity.value;
-    let apiGeoCode = `http://api.openweathermap.org/geo/1.0/direct?q=${searchedCityValue}&limit=1&appid=${apiKey}`;
+    let apiGeoCode = `https://api.openweathermap.org/geo/1.0/direct?q=${searchedCityValue}&limit=1&appid=${apiKey}`;
 
-    //searchedCity.value = null;
+    searchedCity.value = null;
     
     //Call Weather API
     axios.get(apiGeoCode).then(getLongLat)
