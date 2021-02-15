@@ -34,6 +34,7 @@ function getTempCity(response) {
   let forecastDays = document.querySelectorAll(".card-header");
   let minTemps = document.querySelectorAll("#min-temp");
   let maxTemps = document.querySelectorAll("#max-temp");
+  let cardImages = document.querySelectorAll("#image-card");
    
   //show weather box after search variable was entered
   document.getElementById("weather-box").hidden = false;
@@ -49,6 +50,7 @@ function getTempCity(response) {
    let index = 0;
    for( index; index < forecastDays.length; index++ ) {
      forecastDays[index].innerHTML = weekdays[day+1+index];
+     cardImages[index].setAttribute("src", `http://openweathermap.org/img/wn/${response.data.daily[index].weather[0].icon}@2x.png`, "alt", `${response.data.daily[index].weather[0].description}`);
     minTemps[index].innerHTML = Math.round(response.data.daily[index].temp.min);
     maxTemps[index].innerHTML = Math.round(response.data.daily[index].temp.max);
    }
