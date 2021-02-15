@@ -71,7 +71,7 @@ function searchCity(event) {
     let searchedCityValue = searchedCity.value;
     let apiGeoCode = `http://api.openweathermap.org/geo/1.0/direct?q=${searchedCityValue}&limit=1&appid=${apiKey}`;
 
-    searchedCity.value = null;
+    //searchedCity.value = null;
     
     //Call Weather API
     axios.get(apiGeoCode).then(getLongLat)
