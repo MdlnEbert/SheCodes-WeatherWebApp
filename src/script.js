@@ -2,11 +2,10 @@
 function saveLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiKey2 = "f15d01756f0fb22443c2b9ece3cb7eea";
-  let apiURLGeo = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey2}`;
+  let apiOneWeatherCall2 = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=metric&appid=${apiKey}`;
 
   //Call Weather API
-  axios.get(apiURLGeo).then(getTempCity);
+  axios.get(apiOneWeatherCall2).then(getTempCity);
 }
 
 function showLocationTemp(event) {
@@ -43,7 +42,7 @@ function getTempCity(response) {
   humidityElement.innerHTML = response.data.current.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.current.wind_speed);
   weatherDescrElement.innerHTML = response.data.current.weather[0].description;
-  imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`)
+  imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`, "alt", `${response.data.current.weather[0].description}`)
 
    // Update Forecast section
    let index = 0;
