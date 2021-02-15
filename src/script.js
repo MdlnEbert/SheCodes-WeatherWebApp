@@ -32,8 +32,6 @@ function getTempCity(response) {
   let windSpeedElement = document.querySelector("#wind-speed");
   let weatherDescrElement = document.querySelector("#weather-description");
   let forecastDays = document.querySelectorAll(".card-header");
-  let minTemps = document.querySelectorAll("#min-temp");
-  let maxTemps = document.querySelectorAll("#max-temp");
   let cardImages = document.querySelectorAll("#image-card");
    
   //show weather box after search variable was entered
@@ -54,6 +52,10 @@ function getTempCity(response) {
      cardImages[index].setAttribute("src", `http://openweathermap.org/img/wn/${response.data.daily[index].weather[0].icon}@2x.png`, "alt", `${response.data.daily[index].weather[0].description}`);
     minTemps[index].innerHTML = Math.round(response.data.daily[index].temp.min);
     maxTemps[index].innerHTML = Math.round(response.data.daily[index].temp.max);
+
+    //variables needed for celsius / fahrenheit conversion
+    minTempValues[index] = minTemps[index].innerHTML;
+    maxTempValues[index] = maxTemps[index].innerHTML;
    }
 
 }
@@ -81,6 +83,14 @@ function convertCelsius(event) {
   document.querySelector("#show-celsius").classList.add("active");
   document.querySelector("#show-fahrenheit").classList.remove("active");
   document.querySelector("#temp-today").innerHTML = tempSearched;
+
+   //conversion of the forecast section
+  let celsiusIndex = 0;
+  
+  for(celsiusIndex; celsiusIndex < minTemps.length; celsiusIndex++) {
+    minTemps[celsiusIndex].innerHTML = minTempValues[celsiusIndex];
+    maxTemps[celsiusIndex].innerHTML = maxTempValues[celsiusIndex];
+  }  
 }
 
 function convertFahrenheit(event) {
@@ -89,6 +99,14 @@ function convertFahrenheit(event) {
   document.querySelector("#show-celsius").classList.remove("active");
   document.querySelector("#show-fahrenheit").classList.add("active");
   document.querySelector("#temp-today").innerHTML = Math.round((tempSearched * 9/5) + 32);
+
+  //conversion of the forecast section
+  let fahrenheitIndex = 0;
+  
+  for(fahrenheitIndex; fahrenheitIndex < minTemps.length; fahrenheitIndex++) {
+    minTemps[fahrenheitIndex].innerHTML = Math.round((minTempValues[fahrenheitIndex]*9/5) + 32);
+    maxTemps[fahrenheitIndex].innerHTML = Math.round((maxTempValues[fahrenheitIndex]*9/5) + 32);
+  }
 }
 
 //Define variables and arrays
@@ -99,6 +117,11 @@ let searchedCityOutput = document.querySelector("#city-name")
 let searchedCity = document.querySelector("#searched-city");
 let searchSubmit = document.querySelector("#search-input")
 let locationBtn = document.querySelector("#lctn-btn");
+
+  let minTemps = document.querySelectorAll("#min-temp");
+  let maxTemps = document.querySelectorAll("#max-temp");
+  let minTempValues = [null];
+  let maxTempValues = [null];
 
 let weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let now = new Date();
