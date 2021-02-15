@@ -31,14 +31,28 @@ function getTempCity(response) {
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
   let weatherDescrElement = document.querySelector("#weather-description");
-    
+  let forecastDays = document.querySelectorAll(".card-header");
+  let minTemps = document.querySelectorAll("#min-temp");
+  let maxTemps = document.querySelectorAll("#max-temp");
+   
+  //show weather box after search variable was entered
   document.getElementById("weather-box").hidden = false;
+
+  // Update current weather section
   tempTodayElement.innerHTML = Math.round(response.data.current.temp);
    humidityElement.innerHTML = response.data.current.humidity;
    windSpeedElement.innerHTML = Math.round(response.data.current.wind_speed);
    weatherDescrElement.innerHTML = response.data.current.weather[0].description;
-
    imageElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.current.weather[0].icon}@2x.png`)
+
+   // Update Forecast section
+   let index = 0;
+   for( index; index < forecastDays.length; index++ ) {
+     forecastDays[index].innerHTML = weekdays[day+1+index];
+    minTemps[index].innerHTML = Math.round(response.data.daily[index].temp.min);
+    maxTemps[index].innerHTML = Math.round(response.data.daily[index].temp.max);
+   }
+
 }
 
 
